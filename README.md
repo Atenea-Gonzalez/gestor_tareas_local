@@ -36,6 +36,15 @@ sin consultar la base dentro de `build()`.
 ## Estado del trabajo
 
 - [x] Etapa 1 — proyecto base ejecutable y decisión tecnológica documentada.
-- [ ] Etapa 2 — apertura de la base, alta y consulta persistentes.
-- [ ] Etapa 3 — edición, cambio de estado, eliminación y validación.
+- [x] Etapa 2 — apertura de la base, alta y consulta persistentes.
+- [x] Etapa 3 — edición, cambio de estado, eliminación y validación.
 - [ ] Etapa 4 — web, pruebas automatizadas y evidencias.
+
+## Capa de datos implementada
+
+- `lib/data/tareas_table.dart`: definición de la tabla con Drift.
+- `lib/data/app_database.dart`: base persistente multiplataforma (inyectable en
+  pruebas). El nombre del archivo nativo es `gestor_tareas.sqlite`.
+- `lib/data/tareas_repository.dart`: contrato usado por la interfaz.
+- `lib/data/sqlite_tareas_repository.dart`: INSERT/SELECT/UPDATE/DELETE con
+  validación de títulos e IDs, y consulta reactiva mediante `watch()`.
